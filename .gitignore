@@ -34,6 +34,7 @@ ENV/
 venv/
 env.bak/
 venv.bak/
+instance/
 
 # PyCharm
 .idea/

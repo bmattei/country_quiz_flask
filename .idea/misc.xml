@@ -4,4 +4,7 @@
     <option name="sdkName" value="Python 3.9 (country_quiz_flask)" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (country_quiz_flask)" project-jdk-type="Python SDK" />
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
 </project>
