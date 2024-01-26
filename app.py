@@ -8,14 +8,25 @@ from models import Game, Question
 from sqlalchemy.exc import SQLAlchemyError
 from constants import POPULATION_QUESTION
 from helpers import format_number
+from flask import Flask
+from config import DevelopmentConfig, TestConfig, ProductionConfig
+from constants import *
+import os
 
 app = Flask(__name__, instance_relative_config=True)
+
+env = os.getenv('FLASK_ENV', 'development')
+if env == 'production':
+    app.config.from_object(ProductionConfig)
+elif env == 'testing':
+    app.config.from_object(TestConfig)
+else:
+    app.config.from_object(DevelopmentConfig)
+
 
 app.config.from_pyfile('config.py', silent=True)
 
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['DEBUG'] = True
 
 db.init_app(app)
 
@@ -71,15 +82,15 @@ def show_question():
     qg = QuestionGenerator(game_record)
     current_app.logger.debug(f"show_question question_info: {qg}")
 
-    question_record, choices = qg.get_question()
+    status, question_record, choices = qg.get_question()
 
-    if question_record is None:
+    if status == NO_MORE_RECORDS:
+        session['message'] = f"You answered all the questions {game_record.user}. Thanks for playing"
         return redirect(url_for('end_of_game'))
 
     session['question_id'] = question_record.id
     try:
 
-        game_record.questions.append(question_record)
         db.session.commit()
         current_app.logger.debug(f"end show_question session: {session}")
     except SQLAlchemyError as e:
@@ -139,4 +150,4 @@ if __name__ == "__main__":
     print("List of routes:")
     for rule in app.url_map.iter_rules():
         print(f"{rule.endpoint}: {rule}")
-    app.run(port=9999, debug=True)
+    app.run(port=9999)

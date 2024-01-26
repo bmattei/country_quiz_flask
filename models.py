@@ -24,16 +24,7 @@ class Country(db.Model):
     languages = db.Column(db.String(128), nullable=True)
     currencies = db.Column(db.String(128), nullable=True)
 
-games_questions = Table(
-    "games_questions",
-    db.metadata,
-    Column("game_id", Integer, ForeignKey("games.id"), primary_key=True),
-    Column("question_id", Integer, ForeignKey("questions.id"), primary_key=True)
-)
-class GamesQuestions:
-    __tablename__='games_questions'
-    db.Column("game_id", ForeignKey("games.id"), primary_key=True),
-    db.Column("question_id", ForeignKey("questions.id"), primary_key=True),
+
 
 class Question(db.Model):
 
@@ -42,7 +33,7 @@ class Question(db.Model):
     question = db.Column(db.String(256), nullable=False)
     answer = db.Column(db.String(128), nullable=False)
     difficulty = db.Column(db.Integer, nullable=False)
-    type = db.Column(db.Integer, nullable=False)
+    type = db.Column(db.String(64), nullable=False)
     country = db.Column(db.String(128), nullable=False)
     games = db.relationship('Game', secondary = 'games_questions', back_populates='questions')
 
@@ -58,6 +49,12 @@ class Game(db.Model):
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     questions = db.relationship('Question', secondary='games_questions', back_populates = "games")
 
+
+
+class GamesQuestions(db.Model):
+    __tablename__ = 'games_questions'
+    game_id = db.Column(db.Integer, db.ForeignKey('games.id'), primary_key=True)
+    question_id = db.Column(db.Integer, db.ForeignKey('questions.id'), primary_key=True)
 
 
 

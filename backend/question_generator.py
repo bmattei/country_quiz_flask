@@ -1,6 +1,6 @@
 import random
-from models import Country, Question
-from sqlalchemy import func, select
+from models import Country, Question, GamesQuestions
+from sqlalchemy import func, select, distinct, and_
 from constants import *
 from flask import current_app
 from helpers import format_number
@@ -10,10 +10,12 @@ from extensions import db
 
 class QuestionGenerator:
 
-    def __init__(self, game_record):
-        self.game_record = game_record
+    def __init__(self, game):
+        self.game = game
 
-        return
+        self.continents = ['Europe', 'Antarctica', 'Asia', 'North America', 'Africa', 'South America']
+
+
 
     def get_capital_choices(self, q):
         countries = db.session.query(Country) \
@@ -29,17 +31,7 @@ class QuestionGenerator:
         return choices
 
     def get_continent_choices(self, q):
-
-        countries = db.session.query(Country) \
-            .filter(Country.name != q.country, Country.continents != 'Oceana') \
-            .order_by(func.random())
-        choices = []
-
-        for i in range(7):
-            continent = countries[i].continents.split(',')[0]
-            choices.append(continent)
-        index = random.randint(0, len(choices))  # Generates a random index
-        choices.insert(index, q.answer)
+        choices = self.continents
         return choices
 
     def get_population_choices(self, q):
@@ -53,25 +45,43 @@ class QuestionGenerator:
                 choices.append(format_number(choice))
         index = random.randint(0, len(choices))  # Generates a random index
         choices.insert(index, format_number(population))
-
-
-
         return choices
 
-    def get_question(self):
+    def get_question(self, qtype=None):
         current_app.logger.debug("Enter get_question")
         # Assuming 'func.random()' is appropriate for your database
         try:
+            # Start building the query
+            query = select(Question).outerjoin(
+                GamesQuestions,
+                and_(
+                    Question.id == GamesQuestions.question_id,
+                    GamesQuestions.game_id == self.game.id
+                )
+            ).where(
+                GamesQuestions.game_id == None , # Select questions not linked to this game
+                Question.difficulty <= self.game.difficulty
+            ).order_by(
+                func.random()  # Order the results randomly
+            )
+
+
+            # Add a filter for question type if qtype is specified
+            if qtype is not None:
+                query = query.where(Question.type == qtype)
+
             question_record = db.session.execute(
-                select(Question)
-                .where(Question.difficulty <= self.game_record.difficulty)
-                .order_by(func.random())
+                query.order_by(func.random())
             ).scalars().first()
 
             current_app.logger.debug(f"get_question: question_record {question_record}")
             if not question_record:
-                current_app.logger.debug(f"get_question: FAILED GETTING QUESTION RECORD")
-                return None  # or handle the case where no question is found
+                current_app.logger.debug(f"get_question: ")
+                return NO_MORE_RECORDS, None, None  # or handle the case where no question is found
+            else:
+                used_question = GamesQuestions(game_id=self.game.id, question_id=question_record.id)
+                db.session.add(used_question)
+                db.session.commit()
 
             choices = []
             if question_record.type == POPULATION_QUESTION:
@@ -84,6 +94,6 @@ class QuestionGenerator:
                 f"Exit get_question: q: {question_record.question} ans: {question_record.answer} c: {choices}")
         except Exception as e:
             current_app.logger.debug(f"get_question exceptions {e}")
-            return None
+            return UNEXPECTED_ERROR, None, None
 
-        return question_record, choices
+        return SUCCESS, question_record, choices
