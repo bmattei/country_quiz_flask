@@ -1,6 +1,7 @@
 import unittest
 import os
 
+
 os.environ["FLASK_ENV"] = 'testing'
 from app import app, db
 from write_static_data import initialize_db

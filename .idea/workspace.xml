@@ -7,20 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ebaa336-b37f-4871-adb4-9f3c31567a31" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/test/test_views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/write_static_data.py" afterDir="false" />
+    <list default="true" id="5ebaa336-b37f-4871-adb4-9f3c31567a31" name="Changes" comment="Started addding some tests">
+      <change afterPath="$PROJECT_DIR$/test/integration/test_quiz.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/system/system_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/system/test_webdriver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/question_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/question_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/create_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_country_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_question_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/write_country_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/write_country_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/write_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/write_questions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/backend/test_question_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_question_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,34 +40,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_capital_choices.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_continent_choices.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_continent_question.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_country_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_end_of_questions.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_false.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_get_question_returns_a_question.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_one.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_question_is_returned.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_question_is_unique.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_question_generator.MyTestCase.test_true.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.create_db.executor&quot;: &quot;Run&quot;,
-    &quot;Python.sessions.executor&quot;: &quot;Run&quot;,
-    &quot;Python.write_country_data.executor&quot;: &quot;Run&quot;,
-    &quot;Python.write_questions.executor&quot;: &quot;Run&quot;,
-    &quot;Python.write_static_data.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/robertmattei/projects/PycharmProjects/country_quiz_flask&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for system_test.MyTestCase.executor": "Debug",
+    "Python tests.Python tests for system_test.MyTestCase.test_home_page.executor": "Run",
+    "Python tests.Python tests for system_test.SystemTest.executor": "Debug",
+    "Python tests.Python tests for system_test.SystemTest.test_elements_on_page.executor": "Debug",
+    "Python tests.Python tests for system_test.SystemTest.test_verify_title.executor": "Run",
+    "Python tests.Python tests for system_test2.GoogleSearchTest.testTrue.executor": "Debug",
+    "Python tests.Python tests for test_question_generator.MyTestCase.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_capital_choices.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_continent_choices.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_continent_question.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_country_data.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_end_of_questions.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_false.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_get_question_returns_a_question.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_one.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_question_is_returned.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_question_is_unique.executor": "Run",
+    "Python tests.Python tests for test_question_generator.MyTestCase.test_true.executor": "Run",
+    "Python tests.Python tests for test_quiz.MyTestCase.executor": "Run",
+    "Python tests.Python tests for test_quiz.MyTestCase.test_home_page.executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.create_db.executor": "Run",
+    "Python.sessions.executor": "Run",
+    "Python.test_webdriver.executor": "Run",
+    "Python.write_country_data.executor": "Run",
+    "Python.write_questions.executor": "Run",
+    "Python.write_static_data.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/robertmattei/projects/PycharmProjects/country_quiz_flask",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -82,96 +85,89 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_question_generator.MyTestCase.test_end_of_questions">
-    <configuration name="write_static_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="country_quiz_flask" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/write_static_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_question_generator.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for system_test.SystemTest.test_elements_on_page">
+    <configuration name="Python tests for system_test.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/backend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_question_generator.MyTestCase&quot;" />
+      <option name="_new_target" value="&quot;system_test.MyTestCase&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_question_generator.MyTestCase.test_end_of_questions" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for system_test.MyTestCase.test_home_page" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/backend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_question_generator.MyTestCase.test_end_of_questions&quot;" />
+      <option name="_new_target" value="&quot;system_test.MyTestCase.test_home_page&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_question_generator.MyTestCase.test_question_is_returned" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for system_test.SystemTest" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/backend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_question_generator.MyTestCase.test_question_is_returned&quot;" />
+      <option name="_new_target" value="&quot;system_test.SystemTest&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_question_generator.MyTestCase.test_question_is_unique" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for system_test.SystemTest.test_elements_on_page" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/backend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_question_generator.MyTestCase.test_question_is_unique&quot;" />
+      <option name="_new_target" value="&quot;system_test.SystemTest.test_elements_on_page&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for system_test.SystemTest.test_verify_title" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="country_quiz_flask" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;system_test.SystemTest.test_verify_title&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_question_generator.MyTestCase.test_end_of_questions" />
-        <item itemvalue="Python tests.Python tests for test_question_generator.MyTestCase" />
-        <item itemvalue="Python tests.Python tests for test_question_generator.MyTestCase.test_question_is_unique" />
-        <item itemvalue="Python.write_static_data" />
-        <item itemvalue="Python tests.Python tests for test_question_generator.MyTestCase.test_question_is_returned" />
+        <item itemvalue="Python tests.Python tests for system_test.SystemTest.test_elements_on_page" />
+        <item itemvalue="Python tests.Python tests for system_test.SystemTest.test_verify_title" />
+        <item itemvalue="Python tests.Python tests for system_test.SystemTest" />
+        <item itemvalue="Python tests.Python tests for system_test.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for system_test.MyTestCase.test_home_page" />
       </list>
     </recent_temporary>
   </component>
@@ -207,12 +203,21 @@
       <option name="project" value="LOCAL" />
       <updated>1706105700418</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started addding some tests">
+      <option name="closed" value="true" />
+      <created>1706289939575</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706289939575</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Started addding some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started addding some tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -264,8 +269,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test/backend/test_question_generator.py</url>
-          <line>64</line>
+          <line>65</line>
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/system/system_test.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/system/system_test.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

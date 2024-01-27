@@ -9,7 +9,8 @@ def create_db():
 
 # Create the database tables
     with app.app_context():
-
+        db_uri = db.engine.url
+        print("Database URI:", db_uri)
         try:
           db.drop_all()
           db.create_all()
