@@ -1,5 +1,6 @@
 def format_number(number):
-    if number < 1_000_000:
-        return str(number)
+    inum = int(number) # User can pass a string or a int
+    if inum < 1_000_000:
+        return str(inum)
     else:
-        return f'{number / 1_000_000:.2f} Million'
+        return f'{inum / 1_000_000:.2f} Million'

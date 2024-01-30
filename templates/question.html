@@ -1,23 +1,51 @@
 {% extends 'layout.html' %}
-
+{% block scoreboard %}
+{% include 'scoreboard.html' %}
+{% endblock %}
 {% block content %}
-<h2> {{ message }} </h2>
-<h2>{{ question.question }}</h2>
-
-<form action="/submit_answer" method="post">
-    {% for choice in choices %}
-        <div>
-            <input type="radio" id="{{ choice }}" name="choice" value="{{ choice }}" onchange="enableSubmit()">
-            <label for="{{ choice }}">{{ choice }}</label>
+<div class="container">
+    <div class="row justify-content-center text-center">
+        <div class="col-12" id="Question">
+            <h2>{{ question.question }}</h2>
         </div>
-    {% endfor %}
-    <input type="submit" value="Submit Answer" id="submitBtn" disabled>
+    </div>
 
-</form>
+    <div class="row justify-content-center" id="choices">
+        <div class="col-md-6"> <!-- Adjust the column size to center the choices -->
+            <form action="/submit_answer" method="post">
+
+                {% for choice in choices %}
+                    <div class="form-group row">
+                        <!-- Radio Button -->
+                        <div class="col-1 text-right">
+                            <input class="form-check-input" type="radio" id="{{ choice }}" name="choice" value="{{ choice }}" onchange="enableSubmit()">
+                        </div>
+                        <!-- Choice Text -->
+                        <div class="col-11 text-left">
+                            <label class="form-check-label" for="{{ choice }}">{{ choice }}</label>
+                        </div>
+                    </div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <input type="submit" class="btn btn-primary" value="Submit Answer" id="submitBtn" disabled>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script>
     function enableSubmit() {
         document.getElementById('submitBtn').disabled = false;
     }
 </script>
+{% endblock %}
+{% block menu %}
+    <div class="fixed-bottom text-right m-3">
+            <form action="/end_of_game" method="post">
+                <button type="submit" class="btn btn-danger">End Game</button>
+            </form>
+        </div>
 {% endblock %}

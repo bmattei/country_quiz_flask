@@ -1,20 +1,77 @@
-
 {% extends 'layout.html' %}
 
 {% block content %}
-<h1>Welcome to the Country Quiz!</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm mt-5">
+            <div class="col-12 text-center mb-5">
+                <h3>Welcome to the Country Quiz!</h3>
+            </div>
+            <form action="/start_quiz" method="post">
+                <!-- Name Field -->
 
-<form action="/start_quiz" method="post">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name">
+                <!-- Name Field -->
+                <div class="mb-4 row">
+                    <label for="name" class="col-sm-4 col-form-label">Name:</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="name" name="name" onkeyup="checkInputAndEnableButton()">
+                    </div>
+                </div>
 
-    <label for="level">Choose a level:</label>
-    <select name="level" id="level">
-        <option value="Beginner">Beginner</option>
-        <option value="Expert">Expert</option>
-        <option value="Genius">Genius</option>
-    </select>
+                <!-- Level Field -->
+                <div class="mt-4 mb-4 row">
+                    <label for="level" class="col-sm-4 col-form-label">Choose a level:</label>
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <select class="form-control" id="level" name="level">
+                                <option value="Beginner">Beginner</option>
+                                <option value="Expert">Expert</option>
+                                <option value="Genius">Genius</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-    <input type="submit" value="Start Quiz">
-</form>
-{% endblock %}}
+                <div class="mt-4 row">
+                    <div class="col-sm-4"></div> <!-- Offset to align with input fields -->
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary" id="submitBtn" disabled>Start Quiz</button>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    function checkInputAndEnableButton() {
+    var nameInput = document.getElementById('name').value;
+    var submitBtn = document.getElementById('submitBtn');
+    if (nameInput.trim() !== '') {
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
+    }
+}
+</script>
+{% endblock %}
+{% block menu %}
+    <div class="fixed-bottom text-right m-3">
+            <form action="/end_of_game" method="post">
+                <button type="submit" class="btn btn-danger">End Game</button>
+            </form>
+    </div>
+    <p class="m-4">
+        You will be asked 5 questions.  If you get the 5th question correct you
+         will enter the bonus round.  In the bonus round you will continue answering
+         questions until you get one wrong. Harder questions earn more points. Incorrect
+         answers lose points.
+
+         If you answer all the questions the game ends.  If you are playing at the
+         beginner level this can happen at harder levels it can still happen but there
+         are a lot more questions.
+
+    </p>
+
+
+{% endblock %}
+

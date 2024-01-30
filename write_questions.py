@@ -54,19 +54,12 @@ def write_question_data():
                                             country=row.name
                                             )
                     db.session.add(new_question)
-            else:
-                new_question = Question(question=f"{row.name} is on more then one continent name one?",
-                                        answer=clist[0],
-                                        difficulty=difficulty,
-                                        type=CONTINENT_QUESTION,
-                                        country=row.name
-                                        )
-                db.session.add(new_question)
+
 
             new_question = Question(question=f"The population of {row.name} is approximately?",
                                     answer=row.population,
-                                    difficulty=difficulty,
-                                    type=POPULATION_QUESTION,
+                                    difficulty= 15,
+                                    type= POPULATION_QUESTION,
                                     country=row.name)
             db.session.add(new_question)
         try:

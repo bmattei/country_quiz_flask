@@ -7,14 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ebaa336-b37f-4871-adb4-9f3c31567a31" name="Changes" comment="Started addding some tests">
-      <change afterPath="$PROJECT_DIR$/test/integration/test_quiz.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/system/system_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/system/test_webdriver.py" afterDir="false" />
+    <list default="true" id="5ebaa336-b37f-4871-adb4-9f3c31567a31" name="Changes" comment="Added super simple system test of index page">
+      <change afterPath="$PROJECT_DIR$/templates/scoreboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/create_db.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/backend/test_question_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/backend/test_question_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/end_of_game.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/end_of_game.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/integration/test_quiz.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/integration/test_quiz.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/write_questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/write_questions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +50,7 @@
     "Python tests.Python tests for system_test.MyTestCase.executor": "Debug",
     "Python tests.Python tests for system_test.MyTestCase.test_home_page.executor": "Run",
     "Python tests.Python tests for system_test.SystemTest.executor": "Debug",
-    "Python tests.Python tests for system_test.SystemTest.test_elements_on_page.executor": "Debug",
+    "Python tests.Python tests for system_test.SystemTest.test_elements_on_page.executor": "Run",
     "Python tests.Python tests for system_test.SystemTest.test_verify_title.executor": "Run",
     "Python tests.Python tests for system_test2.GoogleSearchTest.testTrue.executor": "Debug",
     "Python tests.Python tests for test_question_generator.MyTestCase.executor": "Run",
@@ -62,6 +67,10 @@
     "Python tests.Python tests for test_question_generator.MyTestCase.test_true.executor": "Run",
     "Python tests.Python tests for test_quiz.MyTestCase.executor": "Run",
     "Python tests.Python tests for test_quiz.MyTestCase.test_home_page.executor": "Run",
+    "Python tests.Python tests for test_quiz.MyTestCase.test_homepage_elements.executor": "Run",
+    "Python tests.Python tests for test_quiz.MyTestCase.test_question_page_elements.executor": "Debug",
+    "Python tests.Python tests for test_quiz.MyTestCase.test_start_quiz.executor": "Run",
+    "Python tests.Python tests in test_question_generator.py.executor": "Run",
     "Python.app.executor": "Run",
     "Python.create_db.executor": "Run",
     "Python.sessions.executor": "Run",
@@ -85,89 +94,96 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for system_test.SystemTest.test_elements_on_page">
-    <configuration name="Python tests for system_test.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="country_quiz_flask" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_quiz.MyTestCase.test_home_page" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;system_test.MyTestCase&quot;" />
+      <option name="_new_target" value="&quot;test_quiz.MyTestCase.test_home_page&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for system_test.MyTestCase.test_home_page" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_quiz.MyTestCase.test_homepage_elements" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;system_test.MyTestCase.test_home_page&quot;" />
+      <option name="_new_target" value="&quot;test_quiz.MyTestCase.test_homepage_elements&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for system_test.SystemTest" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_quiz.MyTestCase.test_question_page_elements" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;system_test.SystemTest&quot;" />
+      <option name="_new_target" value="&quot;test_quiz.MyTestCase.test_question_page_elements&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for system_test.SystemTest.test_elements_on_page" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_quiz.MyTestCase.test_start_quiz" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="country_quiz_flask" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/integration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;system_test.SystemTest.test_elements_on_page&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for system_test.SystemTest.test_verify_title" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="country_quiz_flask" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/system" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;system_test.SystemTest.test_verify_title&quot;" />
+      <option name="_new_target" value="&quot;test_quiz.MyTestCase.test_start_quiz&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for system_test.SystemTest.test_elements_on_page" />
-        <item itemvalue="Python tests.Python tests for system_test.SystemTest.test_verify_title" />
-        <item itemvalue="Python tests.Python tests for system_test.SystemTest" />
-        <item itemvalue="Python tests.Python tests for system_test.MyTestCase" />
-        <item itemvalue="Python tests.Python tests for system_test.MyTestCase.test_home_page" />
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python tests.Python tests for test_quiz.MyTestCase.test_start_quiz" />
+        <item itemvalue="Python tests.Python tests for test_quiz.MyTestCase.test_question_page_elements" />
+        <item itemvalue="Python tests.Python tests for test_quiz.MyTestCase.test_homepage_elements" />
+        <item itemvalue="Python tests.Python tests for test_quiz.MyTestCase.test_home_page" />
       </list>
     </recent_temporary>
   </component>
@@ -211,13 +227,22 @@
       <option name="project" value="LOCAL" />
       <updated>1706289939575</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added super simple system test of index page">
+      <option name="closed" value="true" />
+      <created>1706366239333</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706366239333</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Started addding some tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started addding some tests" />
+    <MESSAGE value="Added super simple system test of index page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added super simple system test of index page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -229,7 +254,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>57</line>
+          <line>84</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -239,7 +264,7 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>110</line>
+          <line>147</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -249,18 +274,13 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/app.py</url>
-          <line>84</line>
+          <line>116</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/question_generator.py</url>
           <line>43</line>
           <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/backend/question_generator.py</url>
@@ -274,13 +294,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test/system/system_test.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="80" />
+          <line>59</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test/system/system_test.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="82" />
+          <line>101</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/system/system_test.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>159</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>129</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/app.py</url>
+          <line>146</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/integration/test_quiz.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/integration/test_quiz.py</url>
+          <line>80</line>
+          <option name="timeStamp" value="103" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
